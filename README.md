@@ -61,8 +61,12 @@ plots and can see the different plots. Also added extra functionality to search 
     * [Website-link](https://www.themoviedb.org/) - the movie database similar to IMDB.
 
 ## System Architecture
-
+for collecting data from Twitter, Reddit and TMDB:
 ![System Architecture](https://drive.google.com/uc?export=view&id=1U5ZcVlE-9_gzfyvOr8DqQEYZIuAmuzzw)
+
+Dashboard flow:
+![pro3-syst-arch drawio](https://user-images.githubusercontent.com/90294806/208221918-3600944b-5d2f-4aa8-bd21-d7952eebb87b.png)
+
 
 ## How to run the project?
 
