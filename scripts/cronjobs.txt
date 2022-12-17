@@ -1,0 +1,140 @@
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;59r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[59;1H"/tmp/crontab.g8j135/crontab" 33L, 1408B[1;1H[34m# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').
+# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command[m
+
+[31m*/15[m[35m *[m[32m *[m[31m *[m[35m *[m [33mpython3 /home/sronghe1/project1-impl/status.py >> /home/sronghe1/cron_logs.txt 2>&1[m
+
+[31m*/30[m[35m *[m[32m *[m[31m *[m[35m *[m [33mpython3 /home/sronghe1/project1-impl/reddit-api/reddit_app.py >> /home/sronghe1/cron_logs.txt 2>&1[m
+
+[31m30[m[35m 12[m[32m *[m[31m *[m[35m *[m [33mpython3 /home/sronghe1/project1-impl/tmdb-api/tmdb_crawler.py >> /home/sronghe1/cron_logs.txt 2>&1[m
+
+[31m32[m[35m 0[m[32m *[m[31m *[m[35m *[m [33mmongodump >> /home/sronghe1/cron_logs.txt 2>&1[m
+
+[31m45[m[35m */6[m[32m *[m[31m *[m[35m *[m [33mpython3 /home/sronghe1/project-2-implementation-the-bhendis/tmdb-crawler/tmdb_meta.py >> /home/sronghe1/cron_logs.txt 2>&1[m
+[1m[34m~                                                                                                                                                                                                             [35;1H~                                                                                                                                                                                                             [36;1H~                                                                                                                                                                                                             [37;1H~                                                                                                                                                                                                             [38;1H~                                                                                                                                                                                                             [39;1H~                                                                                                                                                                                                             [40;1H~                                                                                                                                                                                                             [41;1H~                                                                                                                                                                                                             [42;1H~                                                                                                                                                                                                             [43;1H~                                                                                                                                                                                                             [44;1H~                                                                                                                                                                                                             [45;1H~                                                                                                                                                                                                             [46;1H~                                                                                                                                                                                                             [47;1H~                                                                                                                                                                                                             [48;1H~                                                                                                                                                                                                             [49;1H~                                                                                                                                                                                                             [50;1H~                                                                                                                                                                                                             [51;1H~                                                                                                                                                                                                             [52;1H~                                                                                                                                                                                                             [53;1H~                                                                                                                                                                                                             [54;1H~                                                                                                                                                                                                             [55;1H~                                                                                                                                                                                                             [56;1H~                                                                                                                                                                                                             [57;1H~                                                                                                                                                                                                             [58;1H~                                                                                                                                                                                                             [m[59;189H1,1[11CAll[1;1H[?25h[?25l[59;1HType  :qa  and press <Enter> to exit Vim[59;189H[K[59;189H1,1[11CAll[1;1H[?25h[?25l[59;189H[K[59;189H1,1[11CAll[1;1H[?25h[?25l[59;179Ha[1;1H[59;179H [1;2H[59;1H[1m-- INSERT --[m[59;13H[K[59;189H1,2[11CAll[1;2H[?25h[?25l[34mw Edit this file to introduce tasks to be run by cron.[m[59;191H3[1;3H[?25h[?25l[34md Edit this file to introduce tasks to be run by cron.[m[59;191H4[1;4H[?25h[59;1H[K[1;3H[?25l[59;179H^[[1;3H[59;179H  [1;4H[59;189H1,3[11CAll[1;3H[?25h[?25l[59;179H^[[1;3H[59;179H  [1;3H[59;179H^[[1;3H[59;179H  [1;3H[?25h[?25l[59;1HType  :qa!  and press <Enter> to abandon all changes and exit Vim[59;189H[K[59;189H1,3[11CAll[1;3H[?25h[?25l[59;179H^Z[1;3H[59;1H
+[?1004l[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[?12h[?12l[27m[23m[29m[m[H[2J[?25l[1;1H[34m#wd Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').
+# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command[m
+
+[31m*/15[m[35m *[m[32m *[m[31m *[m[35m *[m [33mpython3 /home/sronghe1/project1-impl/status.py >> /home/sronghe1/cron_logs.txt 2>&1[m
+
+[31m*/30[m[35m *[m[32m *[m[31m *[m[35m *[m [33mpython3 /home/sronghe1/project1-impl/reddit-api/reddit_app.py >> /home/sronghe1/cron_logs.txt 2>&1[m
+
+[31m30[m[35m 12[m[32m *[m[31m *[m[35m *[m [33mpython3 /home/sronghe1/project1-impl/tmdb-api/tmdb_crawler.py >> /home/sronghe1/cron_logs.txt 2>&1[m
+
+[31m32[m[35m 0[m[32m *[m[31m *[m[35m *[m [33mmongodump >> /home/sronghe1/cron_logs.txt 2>&1[m
+
+[31m45[m[35m */6[m[32m *[m[31m *[m[35m *[m [33mpython3 /home/sronghe1/project-2-implementation-the-bhendis/tmdb-crawler/tmdb_meta.py >> /home/sronghe1/cron_logs.txt 2>&1[m
+[1m[34m~                                                                                                                                                                                                             [35;1H~                                                                                                                                                                                                             [36;1H~                                                                                                                                                                                                             [37;1H~                                                                                                                                                                                                             [38;1H~                                                                                                                                                                                                             [39;1H~                                                                                                                                                                                                             [40;1H~                                                                                                                                                                                                             [41;1H~                                                                                                                                                                                                             [42;1H~                                                                                                                                                                                                             [43;1H~                                                                                                                                                                                                             [44;1H~                                                                                                                                                                                                             [45;1H~                                                                                                                                                                                                             [46;1H~                                                                                                                                                                                                             [47;1H~                                                                                                                                                                                                             [48;1H~                                                                                                                                                                                                             [49;1H~                                                                                                                                                                                                             [50;1H~                                                                                                                                                                                                             [51;1H~                                                                                                                                                                                                             [52;1H~                                                                                                                                                                                                             [53;1H~                                                                                                                                                                                                             [54;1H~                                                                                                                                                                                                             [55;1H~                                                                                                                                                                                                             [56;1H~                                                                                                                                                                                                             [57;1H~                                                                                                                                                                                                             [58;1H~                                                                                                                                                                                                             [m[59;189H1,3[11CAll[1;3H[?25h[?25l[?25h[59;1H[?1004l[?2004l[?1l>[>4;m[?1049l[23;0;0tVim: Caught deadly signal HUP
+Vim: preserving files...
+Vim: Finished.
+[59;1H[23;2t[23;1t89H30,0-1[30;1H[?25h[?25l[59;179H^Z[30;1H[59;1H
+[?1004l[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').
+# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command
+
+*/15 * * * * python3 /home/sronghe1/project1-impl/status.py >> /home/sronghe1/cron_logs.txt 2>&1
+
+*/30 * * * * python3 /home/sronghe1/project1-impl/reddit-api/reddit_app.py >> /home/sronghe1/cron_logs.txt 2>&1
+
+30 12 * * * python3 /home/sronghe1/project1-impl/tmdb-api/tmdb_crawler.py >> /home/sronghe1/cron_logs.txt 2>&1
+
+32 0 * * * mongodump >> /home/sronghe1/cron_logs.txt 2>&1
+
+45 */6 * * * python3 /home/sronghe1/project-2-implementation-the-bhendis/tmdb-crawler/tmdb_meta.py >> /home/sronghe1/cron_logs.txt 2>&1
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[?12h[?12l[27m[23m[29m[m[H[2J[?25l[1;1H[34m# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').
+# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command[m
+
+[31m*/15[m[35m *[m[32m *[m[31m *[m[35m *[m [33mpython3 /home/sronghe1/project1-impl/status.py >> /home/sronghe1/cron_logs.txt 2>&1[m
+
+[31m*/30[m[35m *[m[32m *[m[31m *[m[35m *[m [33mpython3 /home/sronghe1/project1-impl/reddit-api/reddit_app.py >> /home/sronghe1/cron_logs.txt 2>&1[m
+
+[31m30[m[35m 12[m[32m *[m[31m *[m[35m *[m [33mpython3 /home/sronghe1/project1-impl/tmdb-api/tmdb_crawler.py >> /home/sronghe1/cron_logs.txt 2>&1[m
+
+[31m32[m[35m 0[m[32m *[m[31m *[m[35m *[m [33mmongodump >> /home/sronghe1/cron_logs.txt 2>&1[m
+
+[31m45[m[35m */6[m[32m *[m[31m *[m[35m *[m [33mpython3 /home/sronghe1/project-2-implementation-the-bhendis/tmdb-crawler/tmdb_meta.py >> /home/sronghe1/cron_logs.txt 2>&1[m
+[1m[34m~                                                                                                                                                                                                             [35;1H~                                                                                                                                                                                                             [36;1H~                                                                                                                                                                                                             [37;1H~                                                                                                                                                                                                             [38;1H~                                                                                                                                                                                                             [39;1H~                                                                                                                                                                                                             [40;1H~                                                                                                                                                                                                             [41;1H~                                                                                                                                                                                                             [42;1H~                                                                                                                                                                                                             [43;1H~                                                                                                                                                                                                             [44;1H~                                                                                                                                                                                                             [45;1H~                                                                                                                                                                                                             [46;1H~                                                                                                                                                                                                             [47;1H~                                                                                                                                                                                                             [48;1H~                                                                                                                                                                                                             [49;1H~                                                                                                                                                                                                             [50;1H~                                                                                                                                                                                                             [51;1H~                                                                                                                                                                                                             [52;1H~                                                                                                                                                                                                             [53;1H~                                                                                                                                                                                                             [54;1H~                                                                                                                                                                                                             [55;1H~                                                                                                                                                                                                             [56;1H~                                                                                                                                                                                                             [57;1H~                                                                                                                                                                                                             [58;1H~                                                                                                                                                                                                             [m[59;189H30,0-1[8CAll[30;1H[?25h[?25l[?25h[59;1H[?1004l[?2004l[?1l>[>4;m[?1049l[23;0;0tVim: Caught deadly signal HUP
+Vim: Finished.
+[59;1H[23;2t[23;1t

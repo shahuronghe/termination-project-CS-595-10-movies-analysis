@@ -1,0 +1,739 @@
+<!doctype html>
+<html class="no-js" lang="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .checked {
+        color: orange;
+    }
+
+    .lit {
+        color: red;
+    }
+
+    html {
+        color: #222;
+        font-size: 1em;
+        line-height: 1.4;
+    }
+
+
+    ::-moz-selection {
+        background: #b3d4fc;
+        text-shadow: none;
+    }
+
+    ::selection {
+        background: #b3d4fc;
+        text-shadow: none;
+    }
+
+
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 1em 0;
+        padding: 0;
+    }
+
+
+    audio,
+    canvas,
+    iframe,
+    img,
+    svg,
+    video {
+        vertical-align: middle;
+    }
+
+
+    fieldset {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    textarea {
+        resize: vertical;
+    }
+
+
+    .hidden,
+    [hidden] {
+        display: none !important;
+    }
+
+
+    .sr-only {
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+
+
+    .sr-only.focusable:active,
+    .sr-only.focusable:focus {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        white-space: inherit;
+        width: auto;
+    }
+
+    .invisible {
+        visibility: hidden;
+    }
+
+
+    .clearfix::before,
+    .clearfix::after {
+        content: " ";
+        display: table;
+    }
+
+    .clearfix::after {
+        clear: both;
+    }
+
+    @media only screen and (min-width: 35em) {
+    }
+
+    @media print,
+    (-webkit-min-device-pixel-ratio: 1.25),
+    (min-resolution: 1.25dppx),
+    (min-resolution: 120dpi) {
+    }
+
+    @media print {
+        *,
+        *::before,
+        *::after {
+            background: #fff !important;
+            color: #000 !important;
+            /* Black prints faster */
+            box-shadow: none !important;
+            text-shadow: none !important;
+        }
+
+        a,
+        a:visited {
+            text-decoration: underline;
+        }
+
+        a[href]::after {
+            content: " (" attr(href) ")";
+        }
+
+        abbr[title]::after {
+            content: " (" attr(title) ")";
+        }
+
+        /*
+         * Don't show links that are fragment identifiers,
+         * or use the `javascript:` pseudo protocol
+         */
+        a[href^="#"]::after,
+        a[href^="javascript:"]::after {
+            content: "";
+        }
+
+        pre {
+            white-space: pre-wrap !important;
+        }
+
+        pre,
+        blockquote {
+            border: 1px solid #999;
+            page-break-inside: avoid;
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        tr,
+        img {
+            page-break-inside: avoid;
+        }
+
+        p,
+        h2,
+        h3 {
+            orphans: 3;
+            widows: 3;
+        }
+
+        h2,
+        h3 {
+            page-break-after: avoid;
+        }
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font: 16px Arial;
+    }
+
+    .autocomplete {
+        position: relative;
+        display: inline-block;
+    }
+
+    input {
+        border: 1px solid transparent;
+        background-color: #f1f1f1;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    input[type=text] {
+        background-color: #f1f1f1;
+        width: 100%;
+    }
+
+    input[type=submit] {
+        background-color: DodgerBlue;
+        color: #fff;
+    }
+
+    .autocomplete-items {
+        position: absolute;
+        border: 1px solid #d4d4d4;
+        border-bottom: none;
+        border-top: none;
+        z-index: 99;
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: #fff;
+        border-bottom: 1px solid #d4d4d4;
+    }
+
+    .autocomplete-items div:hover {
+        background-color: #e9e9e9;
+    }
+
+    .autocomplete-active {
+        background-color: DodgerBlue !important;
+        color: #ffffff;
+    }
+
+    .button {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button1 {
+        background-color: #4CAF50;
+    }
+
+    .button2 {
+        background-color: #008CBA;
+    }
+
+    .button3 {
+        background-color: crimson;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html {
+        background-color: #36454F;
+    }
+
+
+    .main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 32px;
+        font-weight: 800;
+        color: white;
+        text-align: center;
+    }
+
+    img {
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+    }
+
+    .btn {
+        color: #ffffff;
+        padding: 0.8rem;
+        font-size: 14px;
+        text-transform: uppercase;
+        border-radius: 4px;
+        font-weight: 400;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: transparent;
+    }
+
+    .btn:hover {
+        background-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .cards_item {
+        display: flex;
+        padding: 1rem;
+    }
+
+    @media (min-width: 40rem) {
+        .cards_item {
+            width: 35%;
+        }
+    }
+
+    @media (min-width: 56rem) {
+        .cards_item {
+            width: 33.3333%;
+        }
+    }
+
+    .card {
+        background-color: white;
+        border-radius: 0.25rem;
+        box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .card_content {
+        padding: 1rem;
+        background: linear-gradient(to bottom left, black 40%, #36454F 100%);
+        height: 100%;
+    }
+
+    .card_title {
+        color: #ffffff;
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+        margin: 0px;
+    }
+
+    .card_text {
+        color: #ffffff;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-bottom: 1.25rem;
+        font-weight: 400;
+    }
+
+    .made_by {
+        font-weight: 400;
+        font-size: 13px;
+        margin-top: 35px;
+        text-align: center;
+    }
+
+
+    body {
+        margin: 0;
+        padding: 25px;
+    }
+
+    .demo-container {
+        width: 500px;
+        margin: auto;
+    }
+
+    .progress-bar {
+        height: 8px;
+        background-color: rgba(5, 114, 206, 0.2);
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .progress-bar-value {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(5, 114, 206);
+        animation: indeterminateAnimation 1s infinite linear;
+        transform-origin: 0% 50%;
+    }
+
+    @keyframes indeterminateAnimation {
+        0% {
+            transform: translateX(0) scaleX(0);
+        }
+        40% {
+            transform: translateX(0) scaleX(0.4);
+        }
+        100% {
+            transform: translateX(100%) scaleX(0.5);
+        }
+    }
+
+
+    .modal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.4rem;
+        width: 450px;
+        padding: 1.3rem;
+        min-height: 250px;
+        position: absolute;
+        z-index: 2;
+        top: 20%;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+    }
+
+    .modal .flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .modal input {
+        padding: 0.7rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 0.9em;
+    }
+
+    .modal p {
+        font-size: 0.9rem;
+        color: #777;
+        margin: 0.4rem 0 0.2rem;
+    }
+
+    button {
+        cursor: pointer;
+        border: none;
+        font-weight: 600;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 0.8rem 1.4rem;
+        font-weight: 700;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1em;
+    }
+
+    .btn-open {
+        position: absolute;
+        bottom: 150px;
+    }
+
+    .btn-close {
+        transform: translate(10px, -20px);
+        padding: 0.5rem 0.7rem;
+        background: #eee;
+        alignment: right;
+        text-align: right;
+        border-radius: 50%;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(3px);
+        z-index: 1;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+
+</style>
+<head>
+    <meta charset="utf-8">
+    <title>Trending Movies Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="manifest" href="site.webmanifest">
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+<!--    <link rel="stylesheet" href="css/main.css">-->
+
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+<div>
+    <center>
+        <h1>Trending Movies Dashboard</h1>
+        <div class="autocomplete" style="width:300px;">
+            <input id="myInput" type="text" name="myCountry" placeholder="Search movie, cast, directory, genre">
+        </div>
+        <button class="button button1" id="submitBtn">Submit</button>
+        <button class="button button2" id="clearBtn">Clear</button>
+        <a href="http://127.0.0.1:5001/trends">
+            <button class="button button3">Movie Trends</button>
+        </a>
+    </center>
+    <div class="demo-container" id="progress_bar_div" style="margin-top: 25px">
+        <div class="progress-bar">
+            <div class="progress-bar-value"></div>
+        </div>
+    </div>
+</div>
+<div class="main" id="teamRowOne">
+    <!-- all movie cards goes here -->
+</div>
+<form id="invisible_form" action="movie_details.html" method="post" target="_blank">
+    <input id="new_window_parameter_1" name="parameter" type="hidden" value="default">
+</form>
+<script src="js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="js/plugins.js"></script>
+<!--<script src="js/main.js"></script>-->
+<script>
+    function autocomplete(inp, arr) {
+        /*the autocomplete function takes two arguments,
+        the text field element and an array of possible autocompleted values:*/
+        var currentFocus;
+        /*execute a function when someone writes in the text field:*/
+        inp.addEventListener("input", function (e) {
+            var a, b, i, val = this.value;
+            /*close any already open lists of autocompleted values*/
+            closeAllLists();
+            if (!val) {
+                return false;
+            }
+            currentFocus = -1;
+            /*create a DIV element that will contain the items (values):*/
+            a = document.createElement("DIV");
+            a.setAttribute("id", this.id + "autocomplete-list");
+            a.setAttribute("class", "autocomplete-items");
+            /*append the DIV element as a child of the autocomplete container:*/
+            this.parentNode.appendChild(a);
+            /*for each item in the array...*/
+            for (i = 0; i < arr.length; i++) {
+                /*check if the item starts with the same letters as the text field value:*/
+                if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                    /*create a DIV element for each matching element:*/
+                    b = document.createElement("DIV");
+                    /*make the matching letters bold:*/
+                    b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                    b.innerHTML += arr[i].substr(val.length);
+                    /*insert a input field that will hold the current array item's value:*/
+                    b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                    /*execute a function when someone clicks on the item value (DIV element):*/
+                    b.addEventListener("click", function (e) {
+                        /*insert the value for the autocomplete text field:*/
+                        inp.value = this.getElementsByTagName("input")[0].value;
+                        /*close the list of autocompleted values,
+                        (or any other open lists of autocompleted values:*/
+                        closeAllLists();
+                    });
+                    a.appendChild(b);
+                }
+            }
+        });
+        /*execute a function presses a key on the keyboard:*/
+        inp.addEventListener("keydown", function (e) {
+            var x = document.getElementById(this.id + "autocomplete-list");
+            if (x) x = x.getElementsByTagName("div");
+            if (e.keyCode == 40) {
+                /*If the arrow DOWN key is pressed,
+                increase the currentFocus variable:*/
+                currentFocus++;
+                /*and and make the current item more visible:*/
+                addActive(x);
+            } else if (e.keyCode == 38) { //up
+                /*If the arrow UP key is pressed,
+                decrease the currentFocus variable:*/
+                currentFocus--;
+                /*and and make the current item more visible:*/
+                addActive(x);
+            } else if (e.keyCode == 13) {
+                /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                e.preventDefault();
+                if (currentFocus > -1) {
+                    /*and simulate a click on the "active" item:*/
+                    if (x) x[currentFocus].click();
+                }
+            }
+        });
+
+        function addActive(x) {
+            /*a function to classify an item as "active":*/
+            if (!x) return false;
+            /*start by removing the "active" class on all items:*/
+            removeActive(x);
+            if (currentFocus >= x.length) currentFocus = 0;
+            if (currentFocus < 0) currentFocus = (x.length - 1);
+            /*add class "autocomplete-active":*/
+            x[currentFocus].classList.add("autocomplete-active");
+        }
+
+        function removeActive(x) {
+            /*a function to remove the "active" class from all autocomplete items:*/
+            for (var i = 0; i < x.length; i++) {
+                x[i].classList.remove("autocomplete-active");
+            }
+        }
+
+        function closeAllLists(elmnt) {
+            /*close all autocomplete lists in the document,
+            except the one passed as an argument:*/
+            var x = document.getElementsByClassName("autocomplete-items");
+            for (var i = 0; i < x.length; i++) {
+                if (elmnt != x[i] && elmnt != inp) {
+                    x[i].parentNode.removeChild(x[i]);
+                }
+            }
+        }
+
+        /*execute a function when someone clicks in the document:*/
+        document.addEventListener("click", function (e) {
+            closeAllLists(e.target);
+        });
+    }
+
+    document.getElementById("progress_bar_div").style.visibility = "hidden";
+    const container = document.getElementById("teamRowOne");
+    var movies_data = []
+    var url = "http://127.0.0.1:5001/";
+    var search_api = url + "search_list"
+    fetch(search_api, {
+        method: 'GET',
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        }
+    }).then(response => {
+        return response.json();
+    }).then(data => {
+        autocomplete(document.getElementById("myInput"), data);
+    }).catch(err => {
+    });
+
+    document.getElementById("clearBtn").addEventListener("click", function () {
+        console.log("in clear")
+        container.innerHTML = "";
+        document.getElementById("myInput").value = "";
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", function () {
+        document.getElementById("progress_bar_div").style.visibility = "visible"
+        var box_val = document.getElementById("myInput").value;
+        var result_api = url + "get_results";
+        fetch(result_api, {
+            method: 'POST',
+            body: JSON.stringify({
+                "search": box_val
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            }
+        }).then(function (response) {
+            return response.json();
+        })
+            .then(function (data) {
+                console.log(data);
+                movies_data = data;
+                display_movies()
+            }).catch(error => {
+
+            document.getElementById("progress_bar_div").style.visibility = "hidden";
+            console.error('Error:', error)
+        });
+    }, false);
+
+    function display_movies() {
+        container.innerHTML = '';
+        var content = '<ul class="cards">\n';
+
+        movies_data.forEach(result => {
+            console.log(result)
+
+            content += '<li class="cards_item"  onclick="open_movie_dialog(\'' + result._id + '\')">\n' +
+                '      <div class="card">\n' +
+                '        <div class="card_image">' +
+                '         <img src=' + result.poster + '></div>\n' +
+                '        <div class="card_content">\n' +
+                '          <h2 class="card_title">' + result.title + ' (' + result.release_year + ')</h2> \n' +
+                '<h3 class="card_title" style="padding-top: 10px"><span class="fa fa-star checked"></span> (' + result.rating + '/10) &nbsp &nbsp &nbsp <span class="fa fa-solid fa-fire lit"></span> ' + result.popularity + '</h3>\n' +
+                '          <p class="card_text">' + result.overview + '</p>\n' +
+                '          <p class="card_text"><b>Cast:</b> ' + result.actors + '</p>\n' +
+                '          <p class="card_text"><b>Director:</b> ' + result.directors + '</p>\n' +
+                '          <p class="card_text"><b>Genre:</b> ' + result.genre + '</p>\n' +
+                '        </div>\n' +
+                '      </div>\n' +
+                '    </li>'
+        })
+        document.getElementById("progress_bar_div").style.visibility = "hidden";
+        content += '</ul>';
+        container.innerHTML += content
+    }
+
+    function open_movie_dialog(obj_id) {
+        console.log(obj_id);
+        window.open(url + "get_movie_details?movie_id=" + obj_id, "_blank");
+
+    }
+
+</script>
+
+</body>
+
+</html>

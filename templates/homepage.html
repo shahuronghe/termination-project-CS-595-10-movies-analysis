@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trending Movies</title>
+</head>
+<center>
+
+    <h1 style='color:white; font-family: "Roboto Light", "Ubuntu Light", "Ubuntu", monospace'>Trending Movies</h1>
+
+
+    <body bgcolor="#36454F" text="#ffffff">
+
+    <form action="/plot_movies" method="POST" enctype="multipart/form-data">
+        <select name="movie_filter" id="mov_fil">
+            <option value="1">Top Ten Movies by Rating</option>
+            <option value="2">Top Ten Movies by Popularity</option>
+            <option value="3">Top Ten Cast</option>
+            <option value="4">Top Ten Genres</option>
+            <option value="5">Top Ten Directors</option>
+            <option value="6">Top Ten Movies From Twitter & Reddit</option>
+            <option value="7">Worst Movies From Twitter & Reddit</option>
+            <option value="8">Most Negative Movies Tweets</option>
+            <option value="9">Most Negative Movies Comments</option>
+            <option value="10">Most Positive Movies Tweets</option>
+            <option value="11">Most Positive Movies Comments</option>
+        </select>
+        <br>
+        <input type="checkbox" id="2022_only" name="2022_flag" value="enable">
+        <label for="2022_only"> Released in 2022 only</label><br>
+        <br>
+        Start Date:<br> <input style="height:25px;font-size:14pt; color:grey;" name="date_1" type="date"><br><br>
+
+        End Date:<br> <input style="height:25px;font-size:14pt;color:grey;" name="date_2" type="date"><br><br>
+
+        <button style="background:#3630a3;color:white;padding: 15px" type="submit">Generate Plots</button>
+    </form>
+    </body>
+</center>
+</html>
